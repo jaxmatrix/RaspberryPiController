@@ -1,6 +1,7 @@
 import socket
+import os 
 
-localIP = '127.0.0.1'
+localIP = '0.0.0.0'
 localPort = 20001
 bufferSize = 1024
 
@@ -9,6 +10,9 @@ msgFromServer = "Hello UDP Client"
 bytesToSend = str.encode(msgFromServer)
 
 # Create Datagram socket
+ip = os.system("hostname -I")
+print(ip)
+
 
 UDPServerSocket = socket.socket(family=socket.AF_INET,type=socket.SOCK_DGRAM)
 
